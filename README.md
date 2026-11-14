@@ -5,13 +5,15 @@
 - Database Relationship = একাধিক table-এর মধ্যে সংযোগ।
 
 ## Prisma Schema
+```prisma
 model User {
   id   Int    @id @default(autoincrement())
   name String
 }
-
+```
 
 **optional value shoho kare**
+```prisma
 model Product {
   id          Int      @id @default(autoincrement())
   name        String
@@ -22,3 +24,4 @@ model Product {
   createdAt   DateTime @default(now())
   metadata    Json?
 }
+```
