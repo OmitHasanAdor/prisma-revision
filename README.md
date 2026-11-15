@@ -25,3 +25,12 @@ model Product {
   metadata    Json?
 }
 ```
+
+```prisma
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String   @map("full_name")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
