@@ -34,3 +34,16 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+# CRUD Operations
+Use `create()`.
+
+```typescript
+const user = await prisma.user.create({
+  data: {
+    name: "Hasan",
+    email: "hasan@example.com",
+    age: 22,
+  },
+});
+```
