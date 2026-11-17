@@ -47,3 +47,24 @@ const user = await prisma.user.create({
   },
 });
 ```
+
+### Q2. How to create multiple records?
+
+**Answer:**
+
+Use `createMany()`.
+
+```typescript
+const users = await prisma.user.createMany({
+  data: [
+    {
+      name: "Rahim",
+      email: "rahim@example.com",
+    },
+    {
+      name: "Karim",
+      email: "karim@example.com",
+    },
+  ],
+});
+```
