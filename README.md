@@ -68,3 +68,31 @@ const users = await prisma.user.createMany({
   ],
 });
 ```
+
+
+
+## 10.2 Read
+
+### Q3. How to find all records?
+
+**Answer:**
+
+Use `findMany()`.
+
+```typescript
+const users = await prisma.user.findMany();
+```
+
+### Q4. How to find a record by ID?
+
+**Answer:**
+
+Use `findUnique()`.
+
+```typescript
+const user = await prisma.user.findUnique({
+  where: {
+    id: 1,
+  },
+});
+```
