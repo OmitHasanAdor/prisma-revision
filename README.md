@@ -96,3 +96,20 @@ const user = await prisma.user.findUnique({
   },
 });
 ```
+
+## 10.4 Delete
+
+### Q9. How to delete a record?
+
+**Answer:**
+
+Use `delete()`.
+
+```typescript
+const user = await prisma.user.delete({
+  where: {
+    id: 1,
+  },
+});
+```
+
