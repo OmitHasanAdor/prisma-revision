@@ -113,3 +113,19 @@ const user = await prisma.user.delete({
 });
 ```
 
+
+### Q10. How to delete multiple records?
+
+**Answer:**
+
+Use `deleteMany()`.
+
+```typescript
+const result = await prisma.user.deleteMany({
+  where: {
+    age: {
+      lt: 18,
+    },
+  },
+});
+```
