@@ -129,3 +129,31 @@ const result = await prisma.user.deleteMany({
   },
 });
 ```
+
+
+## Q11. What is Upsert?
+
+**Answer:**
+
+`upsert()` means Update or Insert.
+
+If a matching record exists, it updates the record. Otherwise, it creates a new record.
+
+```typescript
+const user = await prisma.user.upsert({
+  where: {
+    email: "hasan@example.com",
+  },
+
+  update: {
+    name: "Updated Hasan",
+  },
+
+  create: {
+    name: "Hasan",
+    email: "hasan@example.com",
+  },
+});
+```
+
+---
