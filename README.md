@@ -157,3 +157,20 @@ const user = await prisma.user.upsert({
 ```
 
 ---
+
+
+# 11. Filtering and Searching
+
+## Q1. How to filter records?
+
+**Answer:**
+
+Use the `where` option.
+
+```typescript
+const users = await prisma.user.findMany({
+  where: {
+    age: 22,
+  },
+});
+```
