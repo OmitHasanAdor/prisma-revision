@@ -174,3 +174,51 @@ const users = await prisma.user.findMany({
   },
 });
 ```
+
+
+## Q2. How to use comparison operators?
+
+**Answer:**
+
+Prisma provides comparison operators.
+
+| Operator | Meaning |
+|---|---|
+| equals | Equal to. |
+| not | Not equal to. |
+| gt | Greater than. |
+| gte | Greater than or equal. |
+| lt | Less than. |
+| lte | Less than or equal. |
+| in | Matches any value in an array. |
+| notIn | Does not match values in an array. |
+
+**Example:**
+
+```typescript
+const users = await prisma.user.findMany({
+  where: {
+    age: {
+      gte: 18,
+      lte: 30,
+    },
+  },
+});
+```
+
+## Q3. How to search using contains?
+
+**Answer:**
+
+Use `contains` to find records where a string field contains specific text.
+
+```typescript
+const users = await prisma.user.findMany({
+  where: {
+    name: {
+      contains: "Has",
+      mode: "insensitive",
+    },
+  },
+});
+```
